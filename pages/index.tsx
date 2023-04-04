@@ -2,6 +2,7 @@ import Head from 'next/head';
 import {Montserrat} from 'next/font/google';
 import Button from '@/components/Button/Button';
 import Arrow from '../public/arrow.svg';
+import Heading from '@/components/Heading/Heading';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -23,9 +24,11 @@ export default function Home() {
           font-family: ${montserrat.style.fontFamily};
         }
       `}</style>
-      <main>
-        <h1>Heading 1</h1>
-        <div>Text</div>
+      <main style={{display: 'grid', gap: '20px'}}>
+        <Heading tag='h1'>Heading 1</Heading>
+        <Heading tag='h2'>Heading 2</Heading>
+        <Heading tag='h3'>Heading 3</Heading>
+        <Heading tag='h4'>Heading 4</Heading>
         <Button type='primary'>купить</Button>
         <Button type='ghost' icon={<Arrow />} iconPosition='right'>
           заказать КП
