@@ -3,11 +3,13 @@ import {Montserrat} from 'next/font/google';
 import Button from '@/components/Button/Button';
 import Arrow from '../public/arrow.svg';
 import Heading from '@/components/Heading/Heading';
+import Paragraph from '@/components/Paragraph/Paragraph';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   weight: ['100', '400', '700'],
   display: 'swap',
+  fallback: ['Arial', 'san-serif'],
 });
 
 export default function Home() {
@@ -29,6 +31,11 @@ export default function Home() {
         <Heading tag='h2'>Heading 2</Heading>
         <Heading tag='h3'>Heading 3</Heading>
         <Heading tag='h4'>Heading 4</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nesciunt, sequi cum nemo
+          deserunt eos saepe tempore numquam tenetur facere harum porro optio necessitatibus quaerat
+          consequatur vitae sint aperiam! Sequi.
+        </Paragraph>
         <Button type='primary'>купить</Button>
         <Button type='ghost' icon={<Arrow />} iconPosition='right'>
           заказать КП
