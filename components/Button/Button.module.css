@@ -1,0 +1,39 @@
+.button {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 11px;
+  padding: 16px 26px 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--primary);
+  letter-spacing: 0.8px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.button svg {
+  width: 15px;
+}
+
+.button:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.ghost {
+  color: var(--primary);
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+}
+
+.ghost:hover {
+  color: var(--white);
+  background-color: var(--primary);
+  border: 1px solid var(--white);
+}
