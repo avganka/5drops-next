@@ -1,0 +1,22 @@
+.input {
+  padding: 9px 8px 9px;
+  max-height: 42px;
+  font-size: 14px;
+  line-height: 40px;
+  background-color: #fafafa;
+  border: 1px solid #ececec;
+  outline-color: var(--primary);
+  color: var(--black);
+  border-radius: 3px;
+}
+
+.input::placeholder {
+  color: var(--gray-light);
+}
+
+@media screen and (max-width: 620px) {
+  .input {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

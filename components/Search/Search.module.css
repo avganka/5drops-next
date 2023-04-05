@@ -1,0 +1,38 @@
+.search {
+  position: relative;
+}
+
+.searchInput {
+  padding-right: 40px;
+  width: 100%;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40px;
+}
+
+.searchIcon {
+  cursor: pointer;
+  padding: 8px;
+  color: var(--gray-light);
+}
+
+.searchIcon:hover {
+  color: var(--gray-dark);
+  transition: color 0.3 ease;
+}
+
+@media screen and (max-width: 620px) {
+  .searchInput {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .iconWrapper {
+    width: 35px;
+  }
+}
