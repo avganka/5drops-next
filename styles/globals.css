@@ -43,4 +43,9 @@ a {
   --success-light: #c8f8e4;
   --error: #fc836d;
   --error-light: #fea291;
+
+  /* Container */
+  --maxWidth: 1400px;
+  --desktopPaddings: 30px;
+  --mobilePaddings: 10px;
 }

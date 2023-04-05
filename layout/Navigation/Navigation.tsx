@@ -3,23 +3,40 @@ import {NavigationProps} from './Navigation.types';
 import styles from './Navigation.module.css';
 import CatalogIcon from '../../public/catalog.svg';
 import LightningIcon from '../../public/lightning.svg';
+import Link from 'next/link';
 
-function Navigation({className, ...props}: NavigationProps): JSX.Element {
+function Navigation({menu, className, ...props}: NavigationProps): JSX.Element {
   return (
     <nav className={styles.navigation} {...props}>
-      <div className={cn(className, styles.navigationWrapper)}>
-        <div className={styles.navigationItem}>
-          <CatalogIcon />
-          Каталог
+      <div className={styles.colorWrapper}>
+        <div className={cn(className, styles.navigationWrapper)}>
+          <Link href={'#'} className={styles.navigationItem}>
+            <CatalogIcon />
+            Каталог
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            <LightningIcon />
+            Опт
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            О компании
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            Прайс-лист
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            Как купить
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            Бренды
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            Статьи
+          </Link>
+          <Link href={'#'} className={styles.navigationItem}>
+            Контакты
+          </Link>
         </div>
-        <div className={styles.navigationItem}>
-          <LightningIcon />О компании
-        </div>
-        <div className={styles.navigationItem}>Прайс-лист</div>
-        <div className={styles.navigationItem}>Как купить</div>
-        <div className={styles.navigationItem}>Бренды</div>
-        <div className={styles.navigationItem}>Статьи</div>
-        <div className={styles.navigationItem}>Контакты</div>
       </div>
     </nav>
   );

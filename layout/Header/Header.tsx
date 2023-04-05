@@ -11,52 +11,41 @@ import EmailIcon from '../../public/email.svg';
 import BasketIcon from '../../public/basket.svg';
 import FavoritesIcon from '../../public/favorite.svg';
 import BurgerIcon from '../../public/burger.svg';
+import SearchIcon from '../../public/search.svg';
 import {formatPhoneNumber} from '@/utils/utils';
+import Navigation from '../Navigation/Navigation';
+import MobileNavigation from '../MobileNavigation/MobileNavigation';
+import {useState} from 'react';
+import Link from 'next/link';
+import TopHeader from '../TopHeader/TopHeader';
+
+const menu = ['Каталог', 'О компании', 'Прайс-лист', 'Как купить', 'Бренды', 'Статьи', 'Контакты'];
 
 function Header({className, ...props}: HeaderProps): JSX.Element {
+  const [showMobile, setShowMobile] = useState<boolean>(false);
+  const [showSearch, setShowSearch] = useState<boolean>(true);
+
+  const showMobileMenuHandler = () => {
+    setShowMobile(!showMobile);
+    setShowSearch(false);
+  };
+  const showMobileSearchHandler = () => {
+    setShowSearch(!showSearch);
+    setShowMobile(false);
+  };
+
   return (
     <>
       <header className={styles.header} {...props}>
-        <div className={cn(className, styles.headerWrapper)}>
-          <div className={styles.burger}>
-            <BurgerIcon />
-          </div>
-          <div className={styles.geo}>
-            <GeoIcon />
-            <span>Москва</span>
-          </div>
-          <div className={styles.email}>
-            <EmailIcon />
-            <span>test@test.ru</span>
-          </div>
-          <div className={styles.phone}>
-            <PhoneIcon />
-            <span>{formatPhoneNumber(89999999999)}</span>
-            <span>Звонок бесплатный</span>
-          </div>
-          <div className={styles.login}>
-            <LoginIcon />
-            <span>Войти</span>
-          </div>
-          <div className={styles.logo}>
-            <Image src={logo} className={styles.logoImage} alt='Логотип' width={190} height={40} />
-          </div>
-          <div className={styles.title}>Оборудование и аксессуары для химических процессов</div>
-          <div className={styles.search}>
+        <TopHeader setShowMobile={showMobileMenuHandler} setShowSearch={showMobileSearchHandler} />
+        <Navigation menu={menu} />
+        {showSearch && (
+          <div className={styles.mobileSearch}>
             <Search />
           </div>
-          <div className={styles.icons}>
-            <div className={cn(styles.iconElement, styles.basketIcon)}>
-              <BasketIcon />
-              <span>0</span>
-            </div>
-            <div className={cn(styles.iconElement, styles.favoritesIcon)}>
-              <FavoritesIcon />
-              <span>0</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.line} />
+        )}
+        {showMobile && <MobileNavigation menu={menu} setShowMobile={showMobileMenuHandler} />}
+        {/* <div className={styles.line} /> */}
       </header>
     </>
   );

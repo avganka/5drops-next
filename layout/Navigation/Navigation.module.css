@@ -1,24 +1,35 @@
 .navigation {
+  /* background-color: tomato; */
   background-color: var(--primary);
-  margin-bottom: 20px;
+}
+
+.colorWrapper {
+  background-color: var(--primary);
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  padding-left: var(--desktopPaddings);
+  padding-right: var(--desktopPaddings);
 }
 
 .navigationWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: var(--white);
+  padding: 0 3px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
   color: var(--white);
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
 }
 
 .navigationItem {
   background-color: var(--primary);
   white-space: nowrap;
   text-align: center;
-  padding: 17px 18px;
+  padding: 8px 10px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
+  flex-grow: 1;
+  border-radius: 3px;
 }
 
 .navigationItem svg {

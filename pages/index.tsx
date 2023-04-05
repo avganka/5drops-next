@@ -38,7 +38,7 @@ export default function Home() {
           deserunt eos saepe tempore numquam tenetur facere harum porro optio necessitatibus quaerat
           consequatur vitae sint aperiam! Sequi.
         </Paragraph>
-        <Search />
+
         <Button type='primary'>купить</Button>
         <Button type='ghost' icon={<Arrow />} iconPosition='right'>
           заказать КП

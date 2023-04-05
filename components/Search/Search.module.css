@@ -17,7 +17,9 @@
 
 .searchIcon {
   cursor: pointer;
-  padding: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 11px;
   color: var(--gray-light);
 }
 
@@ -26,7 +28,7 @@
   transition: color 0.3 ease;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 640px) {
   .searchInput {
     font-size: 12px;
     line-height: 16px;
@@ -34,5 +36,10 @@
 
   .iconWrapper {
     width: 35px;
+  }
+  .searchIcon {
+    padding: 8px;
+    width: 35px;
+    height: 35px;
   }
 }

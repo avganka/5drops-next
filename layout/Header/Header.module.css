@@ -1,17 +1,9 @@
 .header {
-  position: relative;
-}
-
-.headerWrapper {
-  display: grid;
-  grid-template-columns: auto 200px 1fr auto;
-  grid-gap: 0 15px;
-  grid-template-rows: 46px 82px;
-  align-items: center;
-
-  grid-template-areas:
-    'geo email phone login'
-    'logo title search icons';
+  margin-bottom: 20px;
+  /* position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: var(--white); */
 }
 
 .line {
@@ -22,194 +14,27 @@
   position: absolute;
 }
 
-.burger {
-  grid-area: burger;
+.mobileSearch {
   display: none;
-}
-
-.geo {
-  grid-area: geo;
-}
-.email {
-  grid-area: email;
-}
-.phone {
-  grid-area: phone;
-  white-space: nowrap;
-}
-
-.login {
-  grid-area: login;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-
-.logo {
-  grid-area: logo;
-  object-fit: cover;
-}
-
-.logoImage {
-  display: block;
-}
-
-.title {
-  grid-area: title;
-}
-.search {
-  grid-area: search;
-}
-.icons {
-  grid-area: icons;
-  gap: 20px;
-}
-
-.login,
-.iconElement,
-.geo,
-.email,
-.phone,
-.icons {
-  display: flex;
-  align-items: center;
-}
-
-.headerWrapper span {
-  padding-left: 10px;
-}
-
-.email span,
-.geo span,
-.phone span,
-.login span {
-  cursor: pointer;
-}
-
-.phone span:first-of-type,
-.email span {
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.phone span:last-child {
-  cursor: auto;
-}
-
-.geo,
-.phone,
-.email {
-  justify-content: flex-start;
-}
-
-.login,
-.icons {
-  justify-content: flex-end;
-}
-
-.login svg,
-.icons svg,
-.geo svg,
-.phone svg,
-.icons svg {
-  fill: var(--gray-dark);
-  cursor: pointer;
-}
-
-.email svg {
-  stroke: var(--gray-dark);
-  cursor: pointer;
-}
-
-.iconElement {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 5px;
-}
-
-.iconElement span {
-  padding: 0;
-  color: var(--white);
-  text-align: center;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--primary);
 }
 
 @media screen and (max-width: 900px) {
   .header {
-    margin-bottom: 20px;
+    box-shadow: 3px 0px 8px 0px rgba(0, 0, 0, 0.2);
   }
-
-  .headerWrapper {
-    grid-template-columns: auto auto 1fr auto auto auto;
-    grid-template-rows: 72px;
-    grid-template-areas: 'burger logo search phone login icons';
-    gap: 0 20px;
-  }
-  .burger {
-    display: block;
-  }
-
   .line {
     top: 72px;
   }
-
-  .title,
-  .email,
-  .geo {
-    display: none;
-  }
-
-  .login span,
-  .phone span {
-    display: none;
-  }
-
-  .login svg,
-  .icons svg,
-  .geo svg,
-  .email svg,
-  .phone svg,
-  .icons svg {
-    transform: scale(1.1);
-  }
 }
 
-@media screen and (max-width: 620px) {
-  .headerWrapper {
-    grid-template-columns: fit-content(100px) auto auto fit-content(100px) fit-content(100px);
-    grid-template-rows: 50px auto;
-    grid-template-areas:
-      'burger logo phone login icons'
-      'search search search search search';
-  }
-
-  .phone {
-    justify-self: right;
-  }
-
+@media screen and (max-width: 640px) {
   .line {
     display: none;
   }
 
-  .favoritesIcon {
-    display: none;
-  }
-
-  .logoImage {
-    justify-self: left;
-    width: 112px;
-    height: 24px;
-  }
-  .login svg,
-  .icons svg,
-  .geo svg,
-  .email svg,
-  .phone svg,
-  .icons svg {
-    transform: scale(1);
+  .mobileSearch {
+    display: block;
+    padding: 10px 10px 15px;
+    border-bottom: 1px solid #f5f5f5;
   }
 }

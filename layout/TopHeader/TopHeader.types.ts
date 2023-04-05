@@ -1,6 +1,7 @@
 import {DetailedHTMLProps, HTMLAttributes} from 'react';
 
-export interface NavigationProps
+export interface TopHeaderProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  menu: string[];
+  setShowMobile: () => void;
+  setShowSearch: () => void;
 }

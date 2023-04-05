@@ -1,0 +1,239 @@
+.topHeader {
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: var(--desktopPaddings);
+  padding-right: var(--desktopPaddings);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto 200px 1fr auto;
+  grid-gap: 20px 15px;
+  align-items: center;
+
+  grid-template-areas:
+    'geo email phone login'
+    'logo title search icons';
+}
+
+.burger {
+  grid-area: burger;
+  display: none;
+  padding: 5px;
+}
+
+.geo {
+  grid-area: geo;
+}
+.email {
+  grid-area: email;
+}
+.phone {
+  grid-area: phone;
+  white-space: nowrap;
+}
+
+.login {
+  grid-area: login;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.logo {
+  grid-area: logo;
+  object-fit: cover;
+}
+
+.logoImage {
+  display: block;
+}
+
+.title {
+  grid-area: title;
+}
+.search {
+  grid-area: search;
+}
+
+.searchBtn {
+  grid-area: searchBtn;
+  display: none;
+}
+
+.icons {
+  grid-area: icons;
+  gap: 20px;
+}
+
+.login,
+.iconElement,
+.geo,
+.email,
+.phone,
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.topHeader span {
+  padding-left: 10px;
+}
+
+.email span,
+.geo span,
+.phone span,
+.login span,
+.burger {
+  cursor: pointer;
+}
+
+.phone span:first-of-type,
+.email span {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.phone span:last-child {
+  cursor: auto;
+}
+
+.geo,
+.phone,
+.email {
+  justify-content: flex-start;
+}
+
+.login,
+.icons {
+  justify-content: flex-end;
+}
+
+.login svg,
+.geo svg,
+.phone svg,
+.iconElement svg,
+.burger svg,
+.searchBtn {
+  fill: var(--gray-dark);
+  cursor: pointer;
+}
+
+.email svg {
+  stroke: var(--gray-dark);
+  cursor: pointer;
+}
+
+.login:hover svg,
+.geo:hover svg,
+.phone:hover svg,
+.iconElement:hover svg,
+.searchBtn:hover,
+.burger:hover svg {
+  fill: var(--primary);
+}
+
+.email:hover svg {
+  stroke: var(--primary);
+}
+
+.iconElement {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.iconElement span {
+  padding: 0;
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 900px) {
+  .topHeader {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-template-columns: auto auto 1fr auto auto auto;
+    grid-template-areas: 'burger logo search phone login icons';
+    gap: 0 20px;
+  }
+  .burger {
+    display: block;
+  }
+
+  .title,
+  .email,
+  .geo {
+    display: none;
+  }
+
+  .login span,
+  .phone span {
+    display: none;
+  }
+
+  .login svg,
+  .icons svg,
+  .geo svg,
+  .email svg,
+  .phone svg,
+  .icons svg {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .topHeader {
+    grid-template-columns: fit-content(100px) auto auto fit-content(100px) fit-content(100px) fit-content(
+        100px
+      );
+    grid-template-areas: 'burger logo phone searchBtn login icons';
+    gap: 30px;
+    padding-left: var(--mobilePaddings);
+    padding-right: var(--mobilePaddings);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .phone {
+    justify-self: right;
+  }
+
+  .searchBtn {
+    display: block;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .favoritesIcon {
+    display: none;
+  }
+
+  .logoImage {
+    justify-self: left;
+    width: 112px;
+    height: 24px;
+  }
+  .login svg,
+  .icons svg,
+  .geo svg,
+  .email svg,
+  .phone svg,
+  .icons svg {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topHeader {
+    gap: 15px;
+  }
+}
