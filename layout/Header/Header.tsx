@@ -11,6 +11,7 @@ import EmailIcon from '../../public/email.svg';
 import BasketIcon from '../../public/basket.svg';
 import FavoritesIcon from '../../public/favorite.svg';
 import BurgerIcon from '../../public/burger.svg';
+import {formatPhoneNumber} from '@/utils/utils';
 
 function Header({className, ...props}: HeaderProps): JSX.Element {
   return (
@@ -30,7 +31,7 @@ function Header({className, ...props}: HeaderProps): JSX.Element {
           </div>
           <div className={styles.phone}>
             <PhoneIcon />
-            <span>89999999999З</span>
+            <span>{formatPhoneNumber(89999999999)}</span>
             <span>Звонок бесплатный</span>
           </div>
           <div className={styles.login}>
