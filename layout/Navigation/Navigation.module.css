@@ -1,0 +1,37 @@
+.navigation {
+  background-color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.navigationWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  color: var(--white);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.navigationItem {
+  background-color: var(--primary);
+  white-space: nowrap;
+  text-align: center;
+  padding: 17px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigationItem svg {
+  margin-right: 10px;
+  opacity: 60%;
+}
+
+.navigationItem:hover {
+  background-color: var(--primary-dark);
+}
+
+@media screen and (max-width: 900px) {
+  .navigation {
+    display: none;
+  }
+}

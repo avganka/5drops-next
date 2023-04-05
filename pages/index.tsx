@@ -4,6 +4,8 @@ import Button from '@/components/Button/Button';
 import Arrow from '../public/arrow.svg';
 import Heading from '@/components/Heading/Heading';
 import Paragraph from '@/components/Paragraph/Paragraph';
+import Layout from '@/layout/Layout';
+import Search from '@/components/Search/Search';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -26,7 +28,7 @@ export default function Home() {
           font-family: ${montserrat.style.fontFamily};
         }
       `}</style>
-      <main style={{display: 'grid', gap: '20px'}}>
+      <Layout>
         <Heading tag='h1'>Heading 1</Heading>
         <Heading tag='h2'>Heading 2</Heading>
         <Heading tag='h3'>Heading 3</Heading>
@@ -36,11 +38,12 @@ export default function Home() {
           deserunt eos saepe tempore numquam tenetur facere harum porro optio necessitatibus quaerat
           consequatur vitae sint aperiam! Sequi.
         </Paragraph>
+        <Search />
         <Button type='primary'>купить</Button>
         <Button type='ghost' icon={<Arrow />} iconPosition='right'>
           заказать КП
         </Button>
-      </main>
+      </Layout>
     </>
   );
 }
