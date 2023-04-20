@@ -1,39 +1,119 @@
-.button {
-  cursor: pointer;
-  background-color: var(--primary);
+.footer {
+  background-color: var(--black);
   color: var(--white);
-  font-size: 11px;
-  padding: 16px 26px 16px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid var(--primary);
-  letter-spacing: 0.8px;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+}
 
-  display: grid;
-  grid-template-columns: auto 1fr;
+.wrapper {
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  padding-left: var(--desktopPaddings);
+  padding-right: var(--desktopPaddings);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.contacts {
+  flex-basis: min(100%, 200px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.email,
+.phone {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.button svg {
-  width: 15px;
+.phone svg,
+.email svg {
+  color: var(--gray-light);
 }
 
-.button:hover {
-  background-color: var(--primary-light);
-  border-color: var(--primary-light);
+.email span:hover,
+.phone span:hover {
+  color: var(--gray-light);
 }
 
-.ghost {
-  color: var(--primary);
-  background-color: var(--white);
-  border: 1px solid var(--primary);
+.socials {
+  display: flex;
+  gap: 5px;
 }
 
-.ghost:hover {
-  color: var(--white);
-  background-color: var(--primary);
-  border: 1px solid var(--white);
+.socialItem {
+  display: block;
+  width: 43px;
+  height: 43px;
+  border-radius: 3px;
+  opacity: 0.5;
+  border: 1px solid var(--gray-light);
+  background: url(../../public/social.svg) 0 0 no-repeat;
+  overflow: hidden;
+  font-size: 0;
+}
+.socialItem:hover {
+  opacity: 1;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.vk {
+  background-position: -1px -377px;
+}
+.vk:hover {
+  background-position: 0 -188px;
+}
+.telegram {
+  background-position: -330px -518px;
+}
+.telegram:hover {
+  background-position: -329px -329px;
+}
+.youtube {
+  background-position: -95px -518px;
+}
+.youtube:hover {
+  background-position: -94px -329px;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+  color: var(--gray-light);
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    gap: 30px;
+    row-gap: 0;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+
+  .contacts {
+    margin: 30px 0;
+    flex-basis: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .copyright {
+    padding-left: var(--mobilePaddings);
+    padding-right: var(--mobilePaddings);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contacts {
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
