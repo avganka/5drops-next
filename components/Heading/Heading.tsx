@@ -6,27 +6,27 @@ function Heading({tag, children, className, ...props}: HeadingProps): JSX.Elemen
   switch (tag) {
     case 'h1':
       return (
-        <h1 className={cn(className, styles.h1)} {...props}>
+        <h1 className={cn(styles.h1, className)} {...props}>
           {children}
         </h1>
       );
     case 'h2':
       return (
-        <h2 className={cn(className, styles.h2)} {...props}>
+        <h2 className={cn(styles.h2, className)} {...props}>
           {children}
         </h2>
       );
     case 'h3':
       return (
-        <h3 className={cn(className, styles.h3)} {...props}>
+        <h3 className={cn(styles.h3, className)} {...props}>
           {children}
         </h3>
       );
     case 'h4':
       return (
-        <h1 className={cn(className, styles.h4)} {...props}>
+        <h4 className={cn(styles.h4, className)} {...props}>
           {children}
-        </h1>
+        </h4>
       );
   }
 }
