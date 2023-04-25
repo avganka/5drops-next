@@ -51,6 +51,7 @@ span.navigationLink {
 
   padding: 10px 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  z-index: 2;
 }
 
 .dropdownItem {
