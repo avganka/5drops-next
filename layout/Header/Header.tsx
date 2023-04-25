@@ -1,51 +1,64 @@
 import cn from 'classnames';
-import {HeaderProps} from './Header.types';
 import styles from './Header.module.css';
+import Container from '../Container/Container';
+import Logo from '../../public/logo.svg';
 import Search from '@/components/Search/Search';
-import Image from 'next/image';
-import logo from '../../public/logo.png';
-import LoginIcon from '../../public/login.svg';
+import UserIcon from '../../public/user.svg';
 import GeoIcon from '../../public/geo.svg';
 import PhoneIcon from '../../public/phone.svg';
 import EmailIcon from '../../public/email.svg';
-import BasketIcon from '../../public/basket.svg';
-import FavoritesIcon from '../../public/favorite.svg';
+import CartIcon from '../../public/cart.svg';
 import BurgerIcon from '../../public/burger.svg';
 import SearchIcon from '../../public/search.svg';
 import {formatPhoneNumber} from '@/utils/utils';
-import Navigation from '../Navigation/Navigation';
-import MobileNavigation from '../MobileNavigation/MobileNavigation';
-import {useState} from 'react';
 import Link from 'next/link';
-import TopHeader from '../TopHeader/TopHeader';
+import Navigation from '../Navigation/Navigation';
+import {MenuItem} from '../Navigation/Navigation.types';
 
-const menu = ['Каталог', 'О компании', 'Прайс-лист', 'Как купить', 'Бренды', 'Статьи', 'Контакты'];
+const menu: MenuItem[] = [
+  {id: 1, label: 'Каталог', url: '/catalog'},
+  {id: 3, label: 'Прайс-лист', url: '/price'},
+  {id: 2, label: 'О компании', url: '/about'},
+  {id: 4, label: 'Как купить', url: '/how-to-buy'},
+  {id: 5, label: 'Бренды', url: '/brand'},
+  {id: 6, label: 'Статьи', url: '/blog'},
+  {id: 7, label: 'Контакты', url: '/contacts'},
+];
 
-function Header({className, ...props}: HeaderProps): JSX.Element {
-  const [showMobile, setShowMobile] = useState<boolean>(false);
-  const [showSearch, setShowSearch] = useState<boolean>(true);
-
-  const showMobileMenuHandler = () => {
-    setShowMobile(!showMobile);
-    setShowSearch(false);
-  };
-  const showMobileSearchHandler = () => {
-    setShowSearch(!showSearch);
-    setShowMobile(false);
-  };
-
+function Header(): JSX.Element {
   return (
     <>
-      <header className={styles.header} {...props}>
-        <TopHeader setShowMobile={showMobileMenuHandler} setShowSearch={showMobileSearchHandler} />
-        <Navigation menu={menu} />
-        {showSearch && (
-          <div className={styles.mobileSearch}>
-            <Search />
+      <header className={styles.header}>
+        <Container>
+          <div className={styles.topHeader}>
+            <div className={styles.geo}>
+              <GeoIcon />
+              <span>Москва</span>
+            </div>
+            <a href='tel:89999999999' className={styles.phone}>
+              <PhoneIcon />
+              <span>{formatPhoneNumber(89999999999)}</span>
+              <span>Звонок бесплатный</span>
+            </a>
+            <a href='mailto:test@test.ru' className={styles.email}>
+              <EmailIcon />
+              <span>test@test.ru</span>
+            </a>
+            <Link href={'#'} className={styles.logo}>
+              <Logo className={styles.logoImage} />
+            </Link>
+            <Search placeholder='Что будем искать' className={styles.search} />
+            <div className={styles.basket}>
+              <CartIcon />
+              <span>0</span>
+            </div>
+            <div className={styles.login}>
+              <UserIcon />
+              <span>Войти</span>
+            </div>
           </div>
-        )}
-        {showMobile && <MobileNavigation menu={menu} setShowMobile={showMobileMenuHandler} />}
-        {/* <div className={styles.line} /> */}
+          <Navigation menu={menu} />
+        </Container>
       </header>
     </>
   );

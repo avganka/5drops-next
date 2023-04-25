@@ -1,9 +1,8 @@
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import {LayoutProps} from './Layout.types';
-import styles from './Layout.module.css';
+import {PropsWithChildren} from 'react';
 
-function Layout({children}: LayoutProps): JSX.Element {
+function Layout({children}: PropsWithChildren): JSX.Element {
   return (
     <div>
       <Header />

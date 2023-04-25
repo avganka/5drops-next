@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  padding-left: var(--desktopPaddings);
+  padding-right: var(--desktopPaddings);
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding-left: var(--mobilePaddings);
+    padding-right: var(--mobilePaddings);
+  }
+}
