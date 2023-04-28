@@ -1,0 +1,10 @@
+.ratingIcon {
+  stroke: none;
+  fill: var(--gray-light);
+  width: 18px;
+  height: 18px;
+}
+
+.filledIcon {
+  fill: #e6c54f;
+}
