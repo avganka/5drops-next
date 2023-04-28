@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: var(--s);
   line-height: 150%;
   color: var(--black);
   background: var(--white);
@@ -48,4 +48,11 @@ a {
   --maxWidth: 1400px;
   --desktopPaddings: 30px;
   --mobilePaddings: 10px;
+
+  /*Font sizes*/
+  --xs: 12px;
+  --s: 14px;
+  --m: 16px;
+  --l: 24px;
+  --xl: 32px;
 }

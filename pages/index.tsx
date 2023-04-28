@@ -6,6 +6,8 @@ import Heading from '@/components/Heading/Heading';
 import Paragraph from '@/components/Paragraph/Paragraph';
 import Layout from '@/layout/Layout';
 import Container from '@/layout/Container/Container';
+import CatalogProductCard from '@/components/CatalogProductCard/CatalogProductCard';
+import {Product} from '@/components/CatalogProductCard/CatalogProductCard.types';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -13,6 +15,33 @@ const montserrat = Montserrat({
   display: 'swap',
   fallback: ['Arial', 'san-serif'],
 });
+
+const products: Product[] = [
+  {
+    vendorCode: '234551',
+    title: 'Склянка (штанглас) 5drops, 250 мл',
+    retailPrice: 123000,
+    rating: 3,
+  },
+  {
+    vendorCode: '12314',
+    title:
+      'Колбонагреватель 5drops-3000D на 3000 мл, с цифровым дисплеем и внешним датчиком температуры',
+    retailPrice: 53000,
+    oldRetailPrice: 24200,
+    dealerPrice: 12800,
+    tag: 'Хит продаж',
+    rating: 5,
+  },
+  {
+    vendorCode: '345234',
+    title: 'Вата гигиеническая хлопковая 250 гр, нестерильная, 5 шт/упак, РУ № ФСР 2010/07240',
+    retailPrice: 123000,
+    oldRetailPrice: 124200,
+    tag: 'Новинка',
+    rating: 1.3,
+  },
+];
 
 export default function Home() {
   return (
@@ -30,6 +59,17 @@ export default function Home() {
       `}</style>
       <Layout>
         <Container>
+          <div style={{display: 'flex', gap: '30px', marginTop: '30px'}}>
+            {products.map((product) => (
+              <CatalogProductCard
+                key={product.vendorCode}
+                product={product}
+                style={{flexGrow: '1'}}
+              />
+            ))}
+            {/*<*/}
+          </div>
+
           <Heading tag='h1'>Heading 1</Heading>
           <Heading tag='h2'>Heading 2</Heading>
           <Heading tag='h3'>Heading 3</Heading>
@@ -39,11 +79,13 @@ export default function Home() {
             deserunt eos saepe tempore numquam tenetur facere harum porro optio necessitatibus
             quaerat consequatur vitae sint aperiam! Sequi.
           </Paragraph>
-
-          <Button type='primary'>купить</Button>
-          <Button type='ghost' icon={<Arrow />} iconPosition='right'>
-            заказать КП
-          </Button>
+          <div style={{display: 'flex', gap: '10px'}}>
+            <Button type='primary'>Primary</Button>
+            <Button type='bordered' icon={<Arrow />} iconPosition='right'>
+              bordered
+            </Button>
+            <Button type='ghost'>ghost</Button>
+          </div>
         </Container>
       </Layout>
     </>
