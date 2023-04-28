@@ -50,12 +50,12 @@ function Navigation({menu}: NavigationProps) {
   }, []);
 
   return (
-    <nav className={styles.navigation}>
+    <nav>
       <ul className={styles.navigationList} ref={visibleRef}>
         {items.visible.map((item) => (
           <li key={item.id} className={styles.navigationItem}>
             <Link href={item.url} className={styles.navigationLink}>
-              {item.icon ? <img src={item.icon} /> : null}
+              {item.icon ? <Image src={item.icon} alt={item.label} /> : null}
               {item.label}
             </Link>
           </li>

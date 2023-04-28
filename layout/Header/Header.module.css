@@ -55,11 +55,12 @@
   white-space: nowrap;
   color: var(--black);
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--m);
 }
 
 .phone span:last-child {
   cursor: auto;
+  font-size: var(--s);
 }
 
 /*.logo {
@@ -102,7 +103,7 @@
 
 .navigationItem {
   flex-grow: 1;
-  font-size: 15px;
+  font-size: var(--m);
   border-bottom: 3px solid transparent;
   white-space: nowrap;
   padding: 10px 15px 12px;

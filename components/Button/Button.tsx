@@ -1,9 +1,10 @@
 import {ButtonProps} from './Button.types';
 import cn from 'classnames';
 import styles from './Button.module.css';
+import {useRef, MouseEvent} from 'react';
 
 function Button({
-  type,
+  type = 'primary',
   icon,
   iconPosition = 'left',
   children,
@@ -12,9 +13,16 @@ function Button({
 }: ButtonProps): JSX.Element {
   return (
     <button
-      className={cn(styles.button, {
-        [styles.ghost]: type === 'ghost',
-      })}
+      className={cn(
+        styles.button,
+        {
+          [styles.primary]: type === 'primary',
+          [styles.bordered]: type === 'bordered',
+          [styles.ghost]: type === 'ghost',
+        },
+
+        className
+      )}
       {...props}
     >
       {icon && iconPosition === 'left' && icon}

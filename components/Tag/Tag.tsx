@@ -2,7 +2,7 @@ import {TagProps} from './Tag.types';
 import cn from 'classnames';
 import styles from './Tag.module.css';
 
-export function Tag({type, children, className}: TagProps): JSX.Element {
+function Tag({type, children, className}: TagProps): JSX.Element {
   return (
     <div
       className={cn(
